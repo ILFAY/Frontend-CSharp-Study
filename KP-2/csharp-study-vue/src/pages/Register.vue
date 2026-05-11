@@ -1,8 +1,12 @@
 <template>
 <div class="page_registration">
     <main>
-        <form class="card" action="">
+        <form class="card" @submit.prevent="onSubmit">
             <h2>Регистрация</h2>
+            <div class="email_input_block">
+                <h3>Имя</h3>
+                <input v-model="name" type="text">
+            </div>
             <div class="email_input_block">
                 <h3>Email</h3>
                 <input v-model="email" type="email">
@@ -24,8 +28,8 @@
                     <h5 v-if="passwordError">{{ passwordError }}</h5>
                 </div>
             </div>
-            <button class="form_btn" @click.prevent="validateForm">
-                Зарегистрироваться
+            <button class="form_btn" type="submit">
+             Зарегистрироваться
             </button>
             <div class="subtext">
                 <h5>Уже есть аккаунт?</h5>
@@ -41,6 +45,7 @@ import { ref, onMounted, watch } from "vue";
 import { useRouter } from "vue-router";
 import { isValidEmail, isValidPassword } from "../utils/validators";
 import { loadEmail, saveEmail } from "../utils/email_prefill_utils";
+import { registerUser } from "../utils/auth_storage";
 
 const router = useRouter();
 
@@ -51,6 +56,8 @@ const password2 = ref("");
 const emailError = ref("");
 const passwordError = ref("");
 
+const name = ref("");
+
 onMounted(() => {
   email.value = loadEmail();
 });
@@ -59,6 +66,22 @@ watch(email, (newValue) => {
   saveEmail(newValue.trim());
 });
 
+async function  onSubmit() {
+  const isValid = validateForm();
+
+  if (!isValid) {
+    return;
+  }
+
+  const result = await registerUser(name.value.trim(), email.value, password1.value);
+
+  if (!result.ok) {
+    emailError.value = result.message;
+    return;
+  }
+
+  router.push("/authorisation");
+}
 
 function validateForm() {
   emailError.value = "";
@@ -70,7 +93,7 @@ function validateForm() {
   }
 
   if (!isValidPassword(password1.value)) {
-    passwordError.value = "Пароль должен быть не менее 6 символов";
+    passwordError.value = "Пароль должен быть не менее 8 символов";
     return false;
   }
 

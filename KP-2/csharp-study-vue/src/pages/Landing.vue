@@ -41,47 +41,53 @@
         <section class="info">
             <div class="column">
                 <h2>О курсе</h2>
-                <p><em>Небольшое описание курсика</em></p>
+                <p>C# Study — это интерактивный курс по языку C# с нарративной обёрткой. Ты проходишь задания не ради галочки, а помогая персонажам в пяти городах. Каждый правильный ответ — это XP, прогресс и новый кусочек истории.</p>
+                <p>Курс подходит тем, кто начинает с нуля: никаких предварительных знаний не нужно.</p>
             </div>
 
             <div class="column_with_separation">
-                <h2>Список тем</h2>
+                <h2>Темы курса</h2>
                 <div class="topic">
-                    <h3>Тема 1</h3>
-                    <p><em>Описание темы 1</em></p>
+                    <h3>Скрытая Деревня</h3>
+                    <p>Переменные, типы данных, строки, арифметика, ввод и вывод</p>
                 </div>
                 <div class="topic">
-                    <h3>Тема 2</h3>
-                    <p><em>Описание темы 2</em></p>
+                    <h3>Лес Гигантских Деревьев</h3>
+                    <p>Условия: if / else / тернарный оператор / switch</p>
                 </div>
                 <div class="topic">
-                    <h3>Тема 3</h3>
-                    <p><em>Описание темы 3</em></p>
+                    <h3>Город Менестрелей</h3>
+                    <p>Циклы: while, for, do-while, break, continue</p>
                 </div>
                 <div class="topic">
-                    <h3>...</h3>
+                    <h3>Город Алхимиков</h3>
+                    <p>Методы: параметры, return, композиция, рекурсия</p>
+                </div>
+                <div class="topic">
+                    <h3>Столица</h3>
+                    <p>Массивы: объявление, индексы, обход, поиск</p>
                 </div>
             </div>
 
             <div class="column_with_separation">
-                <h2>Дополнительные материалы</h2>
-                <ul class=resources>
+                <h2>Как это работает</h2>
+                <ul class="resources">
                     <li class="resources_item">
                         <span class="check" aria-hidden="true"></span>
                         <div>
-                            <div class="resources_title">Документация</div>
+                            <div class="resources_title">Короткая теория — только то, что нужно для задания</div>
                         </div>
                     </li>
                     <li class="resources_item">
                         <span class="check" aria-hidden="true"></span>
                         <div>
-                            <div class="resources_title">Ссылки для углубления материала</div>
+                            <div class="resources_title">Задания разного типа: выбор ответа, пропуски в коде, расстановка строк, поиск бага</div>
                         </div>
                     </li>
                     <li class="resources_item">
                         <span class="check" aria-hidden="true"></span>
                         <div>
-                            <div class="resources_title">То что не вошло в курс</div>
+                            <div class="resources_title">За каждое задание — XP и кусочек сюжета</div>
                         </div>
                     </li>
                 </ul>
