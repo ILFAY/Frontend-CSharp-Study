@@ -4,7 +4,7 @@ export function isValidEmail(rawString) {
   }
 
   export function isValidPassword(password) {
-    return password.length >= 6;
+    return password.length >= 8;
   }
   
   

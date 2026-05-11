@@ -7,4 +7,5 @@ import "./assets/styles/register_style.css";
 import "./assets/styles/material_style.css";
 import "./assets/styles/global_style.css";
 
+
 createApp(App).use(router).mount("#app");
